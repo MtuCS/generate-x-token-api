@@ -27,6 +27,7 @@ def gen_token():
 
     token = generate_token(sk, tx)
     return jsonify({"token": token.strip()})
+print(">> token:", repr(token))
 
 
 @app.route('/', methods=['GET'])
