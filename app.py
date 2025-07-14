@@ -26,8 +26,9 @@ def gen_token():
         return jsonify({"error": "No SECRET_KEY"}), 500
 
     token = generate_token(sk, tx)
+    print(">> token:", repr(token))
     return jsonify({"token": token.strip()})
-print(">> token:", repr(token))
+
 
 
 @app.route('/', methods=['GET'])
